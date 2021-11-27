@@ -3,6 +3,7 @@ package com.github.deansquirrel.tools.db;
 import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -24,6 +25,8 @@ public class ToolsHelperImpl implements IToolsDbHelper {
 
     @Override
     public void addDataSource(String key, DruidDataSource dataSource, Integer queryTimeout, Integer maxActive) {
+        if(queryTimeout != null) { dataSource.setQueryTimeout(queryTimeout); }
+        if(maxActive != null) { dataSource.setMaxActive(maxActive); }
         this.dynamicRoutingDataSource.addDataSource(key, dataSource);
     }
 
