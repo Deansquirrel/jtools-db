@@ -26,8 +26,10 @@ public interface IToolsDbHelper {
 
     /**
      * 添加数据源
-     * @param key 表示
+     * @param key 标识
      * @param dataSource 连接配置
+     * @param queryTimeout 查询超时
+     * @param maxActive 最大连接数
      */
     public void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource, Integer queryTimeout, Integer maxActive);
 
@@ -74,6 +76,11 @@ public interface IToolsDbHelper {
         dataSource.setTimeBetweenConnectErrorMillis(15 * 1000);
         dataSource.setLoginTimeout(10);
         dataSource.setTestWhileIdle(true);
+    }
+
+    default void setSourceAttributes(DruidDataSource dataSource) {
+        this.setSourceAttributes(dataSource,
+                IToolsDbHelper.DEFAULT_QUERY_TIMEOUT, IToolsDbHelper.DEFAULT_MAX_ACTIVE);
     }
 
 }

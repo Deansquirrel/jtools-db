@@ -5,7 +5,7 @@
   <groupId>com.github.deansquirrel</groupId>
   <artifactId>tools-db-base</artifactId>
 <!--   <version>0.0.0</version>-->
-  <version>0.0.1</version>
+  <version>0.0.2</version>
   <name>tools-db-base</name>
   <url>https://github.com/Deansquirrel/jtools-db-base</url>
   <description>tools db base</description>
