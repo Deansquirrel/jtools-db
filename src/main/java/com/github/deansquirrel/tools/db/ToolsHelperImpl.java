@@ -11,7 +11,8 @@ public class ToolsHelperImpl implements IToolsDbHelper {
     private final JdbcTemplate jdbcTemplate;
     private final DynamicRoutingDataSource dynamicRoutingDataSource;
 
-    public ToolsHelperImpl(@Qualifier(value = IToolsDbHelper.BEAN_JDBC_TEMPLATE) JdbcTemplate jdbcTemplate, @Qualifier(value = "dynamicRoutingDataSourceDynamic") DynamicRoutingDataSource dynamicRoutingDataSource) {
+    public ToolsHelperImpl(@Qualifier(value = IToolsDbHelper.BEAN_JDBC_TEMPLATE) JdbcTemplate jdbcTemplate,
+                           @Qualifier(value = IToolsDbHelper.DYNAMIC_ROUTEING_DATASOURCE) DynamicRoutingDataSource dynamicRoutingDataSource) {
         this.jdbcTemplate = jdbcTemplate;
         this.dynamicRoutingDataSource = dynamicRoutingDataSource;
     }

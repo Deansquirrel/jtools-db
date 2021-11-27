@@ -72,7 +72,7 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
      * @param key 关键字
      */
     public synchronized void removeDataSource(String key) {
-        logger.info("removing datasource {} has been removed", key);
+        logger.info("removing datasource {}", key);
         DruidDataSource dataSource = (DruidDataSource) this.targetDataSources.get(key);
         if(this.targetDataSources.containsKey(key)) {
             this.targetDataSources.remove(key);
@@ -87,10 +87,12 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
      * @param key 关键字
      */
     public synchronized void setDataSourceKey(String key) {
+        logger.debug("set current datasource {}", key);
         this.contextHolder.setDataSourceKey(key);
     }
 
     public synchronized void remove() {
+        logger.debug("set current datasource default");
         this.contextHolder.remove();
     }
 

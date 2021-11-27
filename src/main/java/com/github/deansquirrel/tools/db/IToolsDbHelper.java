@@ -10,6 +10,7 @@ public interface IToolsDbHelper {
 
     public static final String BEAN_TX_MANAGER = "txManagerDynamic";
     public static final String BEAN_JDBC_TEMPLATE = "jdbcTemplateDynamic";
+    public static final String DYNAMIC_ROUTEING_DATASOURCE = "dynamicRoutingDataSourceDynamic";
 
     /**
      * 默认数据库查询超时时间（秒）
