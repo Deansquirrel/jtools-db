@@ -24,9 +24,7 @@ public class ToolsHelperImpl implements IToolsDbHelper {
     }
 
     @Override
-    public void addDataSource(String key, DruidDataSource dataSource, Integer queryTimeout, Integer maxActive) {
-        if(queryTimeout != null) { dataSource.setQueryTimeout(queryTimeout); }
-        if(maxActive != null) { dataSource.setMaxActive(maxActive); }
+    public void addDataSource(String key, DruidDataSource dataSource) {
         this.dynamicRoutingDataSource.addDataSource(key, dataSource);
     }
 

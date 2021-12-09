@@ -17,17 +17,7 @@ public interface IToolsDbHelper {
      * @param key 标识
      * @param dataSource 连接配置
      */
-    default void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource) {
-        this.addDataSource(key, dataSource, null,null);
-    }
-
-    default public void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource,
-                                      Integer queryTimeout) {
-        this.addDataSource(key, dataSource, queryTimeout, null);
-    }
-
-    public void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource,
-                              Integer queryTimeout, Integer maxActive);
+    public void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource);
 
     /**
      * 移除数据源
