@@ -4,6 +4,8 @@ import com.alibaba.druid.pool.DruidDataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.lang.NonNull;
 
+import java.util.Set;
+
 public interface IToolsDbHelper {
 
     /**
@@ -11,6 +13,19 @@ public interface IToolsDbHelper {
      * @return 数据库连接
      */
     JdbcTemplate getJdbcTemplate();
+
+    /**
+     * 查询是否包含指定的数据源
+     * @param key 关键字
+     * @return 查询结果 true / false
+     */
+    public boolean isExistDataSource(String key);
+
+    /**
+     * 数据源key列表
+     * @return 列表
+     */
+    public Set<String> keySet();
 
     /**
      * 添加数据源

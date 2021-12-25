@@ -6,6 +6,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
+import java.util.Set;
+
 @Component
 public class ToolsHelperImpl implements IToolsDbHelper {
 
@@ -21,6 +23,16 @@ public class ToolsHelperImpl implements IToolsDbHelper {
     @Override
     public JdbcTemplate getJdbcTemplate() {
         return this.jdbcTemplate;
+    }
+
+    @Override
+    public boolean isExistDataSource(String key) {
+        return this.dynamicRoutingDataSource.isExistDataSource(key);
+    }
+
+    @Override
+    public Set<String> keySet() {
+        return this.dynamicRoutingDataSource.keySet();
     }
 
     @Override
