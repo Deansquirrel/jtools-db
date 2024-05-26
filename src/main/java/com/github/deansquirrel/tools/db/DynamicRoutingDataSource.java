@@ -101,7 +101,7 @@ public class DynamicRoutingDataSource extends AbstractRoutingDataSource {
      * @return 列表
      */
     public Set<String> keySet() {
-        Set<String> result = new HashSet<String>();
+        Set<String> result = new HashSet<>();
         for(Object key : this.targetDataSources.keySet()) {
             result.add(String.valueOf(key));
         }

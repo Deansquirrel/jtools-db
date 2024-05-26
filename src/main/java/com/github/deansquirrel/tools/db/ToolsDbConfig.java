@@ -17,19 +17,21 @@ public class ToolsDbConfig {
         return new DynamicDataSourceContextHolder();
     }
 
-    @Bean(name = "dynamicRoutingDataSourceDynamic")
+    @Bean(name = Constant.DYNAMIC_ROUTEING_DATASOURCE)
     public DynamicRoutingDataSource getDynamicRoutingDataSource(@Qualifier("dynamicDataSourceContextHolderDynamic") DynamicDataSourceContextHolder dynamicDataSourceContextHolder) {
         return DynamicRoutingDataSource.createDynamicRoutingDataSource(dynamicDataSourceContextHolder);
     }
 
+
     @Bean(name=Constant.BEAN_JDBC_TEMPLATE)
-    public JdbcTemplate getJdbcTemplate(@Qualifier("dynamicRoutingDataSourceDynamic") DataSource ds) {
+    public JdbcTemplate getJdbcTemplate(@Qualifier(Constant.DYNAMIC_ROUTEING_DATASOURCE) DataSource ds) {
         return new JdbcTemplate(ds);
     }
 
     @Bean(name=Constant.BEAN_TX_MANAGER)
-    public PlatformTransactionManager getTxManager(@Qualifier("dynamicRoutingDataSourceDynamic") DataSource ds) {
+    public PlatformTransactionManager getTxManager(@Qualifier(Constant.DYNAMIC_ROUTEING_DATASOURCE) DataSource ds) {
         return new DataSourceTransactionManager(ds);
     }
+
 
 }

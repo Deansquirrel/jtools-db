@@ -19,47 +19,47 @@ public interface IToolsDbHelper {
      * @param key 关键字
      * @return 查询结果 true / false
      */
-    public boolean isExistDataSource(String key);
+    boolean isExistDataSource(String key);
 
     /**
      * 数据源key列表
      * @return 列表
      */
-    public Set<String> keySet();
+    Set<String> keySet();
 
     /**
      * 添加数据源
      * @param key 标识
      * @param dataSource 连接配置
      */
-    public void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource);
+    void addDataSource(@NonNull String key, @NonNull DruidDataSource dataSource);
 
     /**
      * 移除数据源
      * @param key 标识
      */
-    public void removeDataSource(@NonNull String key);
+    void removeDataSource(@NonNull String key);
 
     /**
      * 清空所有数据源
      */
-    public void clear();
+    void clear();
 
     /**
      * 数据源数量
      * @return 数据源数量
      */
-    public long size();
+    long size();
 
     /**
      * 设置当前数据源
      * @param key 标识
      */
-    public void setDataSourceKey(@NonNull String key);
+    void setDataSourceKey(@NonNull String key);
 
     /**
      * 重置缓存（连接使用完后需调用）
      */
-    public void remove();
+    void remove();
 
 }

@@ -5,12 +5,12 @@
   <parent>
     <groupId>com.github.deansquirrel</groupId>
     <artifactId>tools-parent</artifactId>
-    <version>0.0.2</version>
+    <version>1.0.0</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
   <artifactId>tools-db-base</artifactId>
-<!--   <version>0.0.0</version>-->
-  <version>0.1.1</version>
+<!--  <version>0.0.0</version>-->
+  <version>1.0.0</version>
   <name>tools-db-base</name>
   <url>https://github.com/Deansquirrel/jtools-db-base</url>
   <description>tools db base</description>
@@ -66,21 +66,7 @@
       <groupId>org.aspectj</groupId>
       <artifactId>aspectjrt</artifactId>
     </dependency>
-<!--    <dependency>-->
-<!--      <groupId>com.microsoft</groupId>-->
-<!--      <artifactId>sqljdbc4</artifactId>-->
-<!--      <version>3.0</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>mysql</groupId>-->
-<!--      <artifactId>mysql-connector-java</artifactId>-->
-<!--      <version>8.0.27</version>-->
-<!--    </dependency>-->
-<!--    <dependency>-->
-<!--      <groupId>org.xerial</groupId>-->
-<!--      <artifactId>sqlite-jdbc</artifactId>-->
-<!--      <version>3.32.3.3</version>-->
-<!--    </dependency>-->
+
     <dependency>
       <groupId>org.springframework</groupId>
       <artifactId>spring-jdbc</artifactId>
@@ -103,17 +89,6 @@
               <autoReleaseAfterClose>true</autoReleaseAfterClose>
             </configuration>
           </plugin>
-<!--          <plugin>-->
-<!--            <groupId>org.sonatype.plugins</groupId>-->
-<!--            <artifactId>nexus-staging-maven-plugin</artifactId>-->
-<!--            <version>1.6.7</version>-->
-<!--            <extensions>true</extensions>-->
-<!--            <configuration>-->
-<!--              <serverId>ossrh</serverId>-->
-<!--              <nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
-<!--              <autoReleaseAfterClose>true</autoReleaseAfterClose>-->
-<!--            </configuration>-->
-<!--          </plugin>-->
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-gpg-plugin</artifactId>
@@ -153,6 +128,12 @@
                 </goals>
               </execution>
             </executions>
+            <configuration>
+              <additionalJOptions>-Xdoclint:none -J-Dfile.encoding=utf-8</additionalJOptions>
+              <charset>UTF-8</charset>
+              <encoding>UTF-8</encoding>
+              <docencoding>UTF-8</docencoding>
+            </configuration>
           </plugin>
         </plugins>
       </build>
